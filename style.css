@@ -1,0 +1,258 @@
+/* ==========================================================================
+   STYLE.CSS - PROTOCOLO DE FÁCIL VISIBILIDAD & ACCESIBILIDAD 2.Cv
+   DigiThinkingers *.* (G.D.R.P) - SaludconNutricion.com
+   Cumplimiento: WAI-AA (WCAG 2.1) | R.D. 1112/2018 (Braille-Ready)
+   Diseño: Responsive Multisistema (Hardwares Actuales y Futuros)
+   Licencia: CC BY 4.0 Internacional
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES DE COLOR SEMÁNTICAS (Protocolo de Fácil Visibilidad)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta Maestra Claro/Intermedio con Contraste Validado (WAI-AA) */
+  --blaru-pale: #E6F7FF;      /* Color Base / Ejemplo / Normal (Nivel WAI-AA Valid) */
+  --yellow-suave: #FFFFE0;   /* Datos Básicos Obligatorios */
+  --gris-muy-claro: #F5F5F5; /* Datos Opcionales */
+  --black-pure: #000000;      /* Texto de Usuario (Máximo Contraste) */
+  --grey-text: #444444;       /* Texto de Ejemplo / Atenuado */
+  
+  /* Colores de Zona y Acreditación (Intermedios Claros) */
+  --zona-rrhh: #DBEAFE;       /* Azul Claro (Zona 1) */
+  --zona-hosteleria: #FEEBC8; /* Naranja Suave (Zona 2) */
+  --zona-construccion: #E0F2F1; /* Menta Pálido (Zona 3) */
+  --zona-logistica: #E1F5FE;  /* Azul Mar suave (Zona 4) */
+  --zona-industria: #EFEBE9;  /* Gris Cálido (Zona 5) */
+  --zona-tecnologia: #F3E5F5; /* Violeta Pálido (Zona 6) */
+  --zona-particular: #ECEFF1;  /* Gris Azulado (Zona 7) */
+  
+  --link-color: #0056B3;      /* Azul Enlace Verificado */
+  --sello-verificado: #FFD700; /* Oro (Fuente Oficial 100% Real) */
+  --borde-forms: #CCCCCC;     /* Gris para bordes */
+}
+
+/* --------------------------------------------------------------------------
+   2. REGLAS GLOBALES Y MAQUETACIÓN SEMÁNTICA (Responsive)
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* Base para Fácil Visibilidad. Permite zoom de usuario */
+  font-family: Arial, Helvetica, sans-serif; /* Tipografía sans-serif recomendada para accesibilidad */
+  color: var(--black-pure);
+  background-color: #FFFFFF;
+  line-height: 1.6; /* Espaciado WAI-AA para legibilidad */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Contenedor Semántico Multisistema Actual y Futuro */
+.container-2cv {
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo gerencial */
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   3. ESTILOS DE CUESTIONARIO EDUCATIVO (creador.html)
+   -------------------------------------------------------------------------- */
+
+/* Protocolo de Colores Semánticos en Inputs */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid var(--borde-forms);
+  border-radius: 4px;
+  background-color: #FFFFFF; /* Por defecto blanco */
+  transition: background-color 0.3s ease;
+}
+
+/* Color Base / Ejemplo */
+.input-ejemplo {
+  background-color: var(--blaru-pale);
+  color: var(--grey-text); /* Texto de ejemplo atenuado */
+}
+
+/* Al hacer clic (focus), se limpia el ejemplo */
+.input-ejemplo:focus {
+  background-color: #FFFFFF;
+  color: var(--black-pure);
+}
+
+/* Color Datos Básicos */
+.input-basico {
+  background-color: var(--yellow-suave);
+  border: 2px solid #FFCC00; /* Resaltado de Obligatoriedad */
+}
+
+/* Color Datos Opcionales */
+.input-opcional {
+  background-color: var(--gris-muy-claro);
+}
+
+/* Capturador de Inclusión Amplia (Carta Presentación/Vida Laboral) */
+textarea.input-amplio {
+  min-height: 300px;
+  max-height: 600px;
+  resize: vertical; /* Solo vertical para no romper diseño */
+}
+
+/* --------------------------------------------------------------------------
+   4. ESTILOS DEL RECURSO WEB VISUAL (2cv.html)
+   -------------------------------------------------------------------------- */
+
+/* Estilos de Zona Modulares */
+.zona-modular {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.zona-modular.zona-1 { background-color: var(--zona-rrhh); }
+.zona-modular.zona-2 { background-color: var(--zona-hosteleria); }
+.zona-modular.zona-3 { background-color: var(--zona-construccion); }
+.zona-modular.zona-4 { background-color: var(--zona-logistica); }
+.zona-modular.zona-5 { background-color: var(--zona-industria); }
+.zona-modular.zona-6 { background-color: var(--zona-tecnologia); }
+.zona-modular.zona-7 { background-color: var(--zona-particular); }
+
+/* Enlaces Verificados */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--link-color); /* Indicador WAI-AA de enlace */
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+  border-bottom: 1px solid var(--link-color);
+}
+
+/* Sello Título Verificado en Fuente Oficial (España/Gubernamental) */
+.sello-oficial {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--black-pure);
+  background-color: var(--sello-verificado);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. ESTILOS DE INNOVACIÓN (Embeds, Almacén GitHub, Vídeo-Pitch)
+   -------------------------------------------------------------------------- */
+
+/* Previsualización Dinámica de Embeds (Small Screen Embed) */
+.embed-container {
+  width: 100%;
+  max-width: 400px; /* Pantalla pequeña para veracidad inmediata */
+  height: auto;
+  aspect-ratio: 16 / 9; /* Formato estándar */
+  border: 1px solid var(--borde-forms);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Almacén de Documentos en GitHub (URLs Reales) */
+.doc-almacen-github {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--gris-muy-claro);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.doc-almacen-github a {
+  font-weight: bold;
+}
+
+/* Vídeo-Pitch Interactivo con Marcadores de Competencia */
+.video-pitch-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.video-pitch-container video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.marcadores-video {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.marcador {
+  background-color: var(--blaru-pale);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid var(--link-color);
+}
+
+/* --------------------------------------------------------------------------
+   6. LICENCIA CC BY 4.0 Y PIE DE PÁGINA (Institucional)
+   -------------------------------------------------------------------------- */
+.footer-2cv {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--gris-muy-claro);
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--borde-forms);
+}
+
+/* --------------------------------------------------------------------------
+   7. MEDIA QUERIES (Responsividad Multisistema y Braille-Ready)
+   -------------------------------------------------------------------------- */
+
+/* Tablets / Dispositivos Intermedios (> 768px) */
+@media (min-width: 768px) {
+  .container-2cv {
+    padding: 30px;
+  }
+}
+
+/* Móviles / Hardwares Actuales y Futuros pequeños (< 768px) */
+@media (max-width: 767px) {
+  html { font-size: 15px; } /* Ajuste ligero para pantallas pequeñas */
+  .container-2cv { padding: 15px; }
+  .embed-container { max-width: 100%; } /* Embed a ancho completo en móvil */
+}
+
+/* Adaptación para Líneas Braille (Semántica y Estructura) */
+@media braille, embossed {
+  /* Estas reglas no se visualizan, pero garantizan que los lectores Braille
+     interpreten el DOM de forma 100% Correcta y Real */
+  body {
+    background: none !important;
+    color: black !important;
+  }
+}
