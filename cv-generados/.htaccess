@@ -1,5 +1,0 @@
-# Bloquear listados de directorio y permitir acceso web a los HTML
-Options -Indexes
-<FilesMatch "\.(html|php)$">
-    Allow from all
-</FilesMatch>
